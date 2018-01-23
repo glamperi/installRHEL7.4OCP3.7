@@ -1,7 +1,7 @@
 # installRHEL7.4OCP3.7
 
 
-1.  # subscription-manager register --username=<user_name> --password=<password>
+1. Register with the Subscription manager : # subscription-manager register --username=<user_name> --password=<password>
 
 1. Pull the latest subscription data from RHSM:  # subscription-manager refresh
 2. List the available subscriptions:  # subscription-manager list --available --matches '*OpenShift*'
@@ -13,6 +13,7 @@
 6. yum install atomic-openshift-utils
 7. yum install wget git net-tools bind-utils iptables-services bridge-utils bash-completion kexec-tools sos psacct
 8. Edit the inventory.ini file with your IP addresses and DOMAIN Name changes
+9. edit /etc/hosts with the hostname (ie, master.172.16.15.210.nip.io), and set hostname <hostname> (ie, master.172.16.15.210.nip.io)
 9. ansible-playbook -i installRHEL7.4OCP3.7/inventory.ini /usr/share/ansible/openshift-ansible/playbooks/byo/config.yml
 
 
