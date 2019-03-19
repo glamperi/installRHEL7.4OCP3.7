@@ -1,0 +1,43 @@
+[OSEv3:children]
+masters
+nodes
+etcd
+
+[etcd]
+master.10.0.2.15.xip.io
+
+[masters]
+master.10.0.2.15.xip.io openshift_schedulable=trueopenshift_deployment_type=openshift-enterprise
+
+
+
+openshift_release=v3.11
+#openshift_pkg_version=v3.11
+#openshift_image_tag=v3.11
+
+
+osm_use_cockpit=true
+oreg_auth_user=openshift
+oreg_auth_password='openshift'
+
+openshift_logging_install_logging=True
+
+#openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
+
+openshift_master_default_subdomain=apps.10.0.2.15.xip.io
+openshift_disable_check=disk_availability,docker_image_availability,docker_storage
+
+
+[nodes]
+master.10.0.2.15.xip.io openshift_schedulable=true openshift_node_group_name='node-config-infra'
+
+[OSEv3:vars]
+ansible_ssh_user=root
+
+
+deployment_type=openshift-enterprise
+openshift_deployment_type=openshift-enterprise
+
+
+
+
