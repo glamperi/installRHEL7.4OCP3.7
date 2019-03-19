@@ -22,3 +22,4 @@ For OADM commands use: oc login -u system:admin --config=/etc/origin/master/admi
 
 
 
+Note changes for OCP 3.11 - need to install skopeo and need RH Registry user/pass per https://access.redhat.com/solutions/3661111
