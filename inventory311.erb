@@ -38,3 +38,11 @@ openshift_logging_install_logging=True
 openshift_master_default_subdomain=apps.10.0.2.15.xip.io
 openshift_disable_check=disk_availability,docker_image_availability,docker_storage
 
+# htpasswd auth
+#openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
+# Defining htpasswd users
+#openshift_master_htpasswd_users={'user1': '<pre-hashed password>', 'user2': '<pre-hashed password>'}
+# or
+#openshift_master_htpasswd_file=<path to local pre-generated htpasswd file>
+
+# Allow all auth
